@@ -11,14 +11,5 @@ export const {
   signIn, signOut
 } = NextAuth({
   adapter: PrismaAdapter(prisma),
-  providers: [
-    Auth0Provider({
-      clientId: process.env.AUTH_AUTH0_ID,
-      clientSecret: process.env.AUTH_AUTH0_SECRET
-    }),
-    GitHub({
-      clientId: process.env.AUTH_GITHUB_ID,
-      clientSecret: process.env.AUTH_GITHUB_SECRET,
-    })
-  ],
+  providers: [Auth0Provider, GitHub],
 });
